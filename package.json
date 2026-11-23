@@ -1,0 +1,20 @@
+{
+  "name": "sweet-worlds",
+  "version": "0.1.0",
+  "description": "Sweet Worlds - plataformas 3D multijugador de dulces",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node test/physics.js && node test/builders.js && node test/smoke.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.7.5"
+  }
+}

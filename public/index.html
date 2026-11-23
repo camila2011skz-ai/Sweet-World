@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Sweet Worlds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{"imports":{"three":"/vendor/three/three.module.js"}}</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<section id="s-menu" data-screen class="screen">
+  <div class="panel">
+    <h1>Sweet <span>Worlds</span></h1>
+    <p class="sub">Corre, salta y llega primero a la meta en el Reino de los Dulces 🍭</p>
+    <button id="btn-play" class="btn big">¡Jugar!</button>
+    <p class="tiny">2 a 4 jugadores · PC o móvil</p>
+  </div>
+</section>
+
+<section id="s-select" data-screen class="screen hidden bottom">
+  <div class="panel">
+    <h2>Elige tu personaje</h2>
+    <input id="name" maxlength="12" placeholder="Tu nombre (máx. 12)" autocomplete="off">
+    <div id="cards" class="cards"></div>
+    <button id="btn-create" class="btn">Crear sala</button>
+    <div class="or">o únete con un código</div>
+    <div class="row"><input id="code" maxlength="4" placeholder="ABCD" autocomplete="off" autocapitalize="characters"><button id="btn-join" class="btn alt">Unirme</button></div>
+    <p id="sel-error" class="err"></p>
+    <button id="btn-back" class="link">← Volver</button>
+  </div>
+</section>
+
+<section id="s-lobby" data-screen class="screen hidden bottom">
+  <div class="panel">
+    <h2>Sala de espera</h2>
+    <p class="tiny" id="lobby-level"></p>
+    <div class="code">Código: <b id="lobby-code">----</b> <button id="btn-copy" class="link">Copiar enlace</button></div>
+    <ul id="lobby-players" class="plist"></ul>
+    <p id="lobby-hint" class="tiny"></p>
+    <button id="btn-start" class="btn big">¡Empezar!</button>
+    <button id="btn-leave" class="link">Salir de la sala</button>
+  </div>
+</section>
+
+<section id="s-hud" data-screen class="hidden">
+  <div id="look"></div>
+  <div class="hud-top"><span id="h-place">-</span><span id="h-time">0.0s</span><span id="h-candies">🍬 0</span></div>
+  <div id="h-prog" class="prog"></div>
+  <div id="countdown"></div>
+  <div id="banner"></div>
+  <div id="toast"></div>
+  <div id="joy"><div id="knob"></div></div>
+  <button id="jump">SALTAR</button>
+</section>
+
+<section id="s-results" data-screen class="screen hidden bottom">
+  <div class="panel">
+    <h2>🏆 Resultados</h2>
+    <ul id="res-list" class="res"></ul>
+    <button id="btn-again" class="btn">Volver a la sala</button>
+    <button id="btn-exit" class="link">Salir</button>
+  </div>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
